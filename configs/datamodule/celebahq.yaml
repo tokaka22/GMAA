@@ -1,0 +1,22 @@
+_target_: src.datamodules.celebahq.face_datamodulel.FaceDataModule
+image_size: 128
+au_c_dim: 17
+# trg_au: 
+data_dir: ${paths.data_dir}
+batch_size: 8
+num_workers: 6
+pin_memory: True
+au_mode: 'fixed' # 'random'
+data_use: ['CelebAHQ']
+data_split: train_val 
+test_smallset: True
+
+data:
+  CelebAHQ:
+    path: CelebAHQ
+    image_path: CelebA-HQ-filter-img/images_aligned
+    attr_path: list_attr_HQ-filter-img.txt
+    id_path: identity_CelebA.txt 
+    lm_path: lm_HQ-filter-img.txt
+    dt_path: dt_HQ-filter-img.txt
+    map_path: CelebA-HQ-to-CelebA-mapping.txt

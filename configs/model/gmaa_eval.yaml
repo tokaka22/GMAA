@@ -1,0 +1,78 @@
+_target_: src.models.gmaa.gmaa_eval_module.AdvLitModule
+
+optimizer:
+  g_lr: 0.0001
+  d_lr: 0.0001
+  beta1: 0.5
+  beta2: 0.99
+  weight_decay: 0.0
+
+config_dict: 
+  # mode
+  g_part_loss_mode: "mse" # "perception" "ssim"
+  g_bg_loss_mode: "mse" # "perception" "ssim"
+  g_dt_loss_mode: "mse" # "perception" "ssim"
+
+  g_f_w: 10
+
+  # mse perturbation
+  g_p_part_w: 0.5
+  g_p_bg_w: 0.5
+  g_p_dt_w: 0.5
+
+  # LPIPS perception
+  g_LPIPS_part_w: 50
+  g_LPIPS_dt_w: 50
+  g_LPIPS_bg_w: 50
+
+  # ssim
+  g_ssim_dt_w: 40
+  g_ssim_bg_w: 40
+
+  g_a_w: 20
+
+  lambda_cls: 250
+  lambda_gp: 10
+  lambda_adv: 5
+
+  g_conv_dim: 64
+  c_dim: 17
+  g_repeat_num: 6
+
+  image_size: 128
+  ori_size: 1024
+
+  d_conv_dim: 64
+  d_repeat_num: 6
+  g_noise_in_c: 3
+  g_noise_out_c: 3
+
+  attack_model_name_list: ['facenet', 'ir152', 'irse50', 'mobile_face']
+
+  train_model_name_list: ['facenet', 'ir152', 'irse50']
+  val_model_name_list: ['facenet', 'ir152', 'irse50', 'mobile_face']
+  
+  au_c_dim: 17
+  g_freq: 3
+
+  train_vis:
+    dir: "${paths.output_dir}"
+    name: "train_vis/"
+    freq: 3
+  val_vis:
+    dir: "${paths.output_dir}"
+    name: "val_vis/"
+  test_vis:
+    dir: "${paths.output_dir}"
+    name: "test_vis/"
+  terminal:
+    dir: "${paths.output_dir}"
+    name: "train_loss.txt"
+  val:
+    dir: "${paths.output_dir}"
+    name: "val_asr.txt"
+  
+  output_dir: "${paths.output_dir}"
+  conti_au_path: "data/typical_au.txt" # data/typical_au_interval.txt
+  ratio: 1
+

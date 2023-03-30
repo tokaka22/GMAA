@@ -1,0 +1,18 @@
+defaults:
+  - model_checkpoint.yaml
+  - model_summary.yaml
+  - rich_progress_bar.yaml
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}"
+  monitor: "current_epoch"
+  mode: "max"
+  save_last: False
+  save_top_k: 5
+  every_n_epochs: 15
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: -1
