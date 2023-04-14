@@ -564,11 +564,6 @@ class AdvLitModule(LightningModule):
         self.lm_nose = self.lm_org[:, 1]
         self.lm_mouth = self.lm_org[:, 2]
 
-
-        for idx, _ in enumerate(self.iter_loss_img_list):
-            save_image(self.denorm(self.iter_loss_img_list[idx]), self.current_e_train_vis_path +
-            '/loss_img{}_step{}.png'.format(idx, batch_idx), nrow=6)
-
         self.train_discriminator()
 
         if (self.local_step) % self.g_freq == 0: # g_freq: number of D updates per each G update         
