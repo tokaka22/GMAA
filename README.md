@@ -1,5 +1,7 @@
 # GMAA-Pytorch Implementation
 
+The official implementation of our CVPR 2023 paper "**Discrete Point-wise Attack Is Not Enough: Generalized Manifold Adversarial Attack for Face Recognition**" [[Paper]](https://arxiv.org/abs/2301.06083)
+
 ## Introduction
 
 The repo provides code of **GMAA** with [Lightning-Hydra-Template](https://github.com/ashleve/lightning-hydra-template).
@@ -31,14 +33,14 @@ The training and testing experiments are conducted using with a single NVIDIA Te
 
     + After step.3, replace your trained model path (`--ckpt_path`) in `script/eval.sh`. The trained model path is `logs/train/gmaa/runs/%Y-%m-%d_%H-%M-%S/checkpoints/epoch_019.ckpt`(`max_epoch` is setted to `20`).
     + Just enjoy it via running `bash script/eval.sh` in your terminal. The **evaluation results directory** is `logs/eval/gmaa/runs/%Y-%m-%d_%H-%M-%S`. The generated adversarial examples of test dataset is in `test_vis` of  **evaluation results directory**.
-
+	
 5. Evaluation Configuration:
 
     + Replace your testing adversarial examples directory (`--res_root`) in `metric/test_asr.py` & `metric/test_faceplusplus.py`. The testing adversarial examples directory of step.4 is `test_vis` of  **evaluation results directory**.
     
     + Just enjoy it via running `python metric/test_asr.py` to get the attack success rate. The result is saved in `test_asr` of  **evaluation results directory**.
     
-    + Just enjoy it via running `python metric/test_faceplusplus.py` to get the Face++ confidence score. The result is saved in `test_faceplusplus` of  **evaluation results directory**. 
+    + Just enjoy it via running `python metric/test_faceplusplus.py` to get the Face++ confidence score. The result is saved in `test_faceplusplus` of  **evaluation results directory**. Visualization videos with Face++ confidence scores are under `metric/Videos`.
     
       **Please note:** Need fill your own api `--key` and `--secret` getted from [Face++](https://www.faceplusplus.com.cn/).
 ```shell
@@ -75,3 +77,16 @@ The training and testing experiments are conducted using with a single NVIDIA Te
 ## Acknowledge
 
 Some of the codes are built upon [AMT](https://github.com/CGCL-codes/AMT-GAN), pretrained face recognition models are from [Adv-Makeup](https://github.com/TencentYoutuResearch/Adv-Makeup)
+
+## BibTeX
+
+```
+@misc{li2023discrete,
+      title={Discrete Point-wise Attack Is Not Enough: Generalized Manifold Adversarial Attack for Face Recognition}, 
+      author={Qian Li and Yuxiao Hu and Ye Liu and Dongxiao Zhang and Xin Jin and Yuntian Chen},
+      year={2023},
+      eprint={2301.06083},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
