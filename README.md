@@ -1,6 +1,6 @@
 # GMAA-Pytorch Implementation
 
-The official implementation of our CVPR 2023 paper "**Discrete Point-wise Attack Is Not Enough: Generalized Manifold Adversarial Attack for Face Recognition**" [[Paper]](https://arxiv.org/abs/2301.06083)
+The official implementation of our CVPR 2023 paper "**Discrete Point-wise Attack Is Not Enough: Generalized Manifold Adversarial Attack for Face Recognition**" [[Arxiv](https://arxiv.org/abs/2301.06083)] [[CVPR](https://openaccess.thecvf.com/content/CVPR2023/html/Li_Discrete_Point-Wise_Attack_Is_Not_Enough_Generalized_Manifold_Adversarial_Attack_CVPR_2023_paper.html)]
 
 ## Introduction
 
@@ -89,4 +89,13 @@ Some of the codes are built upon [AMT](https://github.com/CGCL-codes/AMT-GAN), p
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+```
+```
+@InProceedings{Li_2023_CVPR,
+    author    = {Li, Qian and Hu, Yuxiao and Liu, Ye and Zhang, Dongxiao and Jin, Xin and Chen, Yuntian},
+    title     = {Discrete Point-Wise Attack Is Not Enough: Generalized Manifold Adversarial Attack for Face Recognition},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {20575-20584}
 ```
